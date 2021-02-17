@@ -19,6 +19,7 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  int ids = 0;
   Future<List> getData() async {
     final response = await http.get("https://aimamf.live/flutter/getdata.php?tokens=private");
     return json.decode(response.body);
@@ -28,15 +29,11 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: new AppBar(
-        title: new Text("Data list"),
+        title: new Text("Data list $ids"),
       ),
       floatingActionButton: new FloatingActionButton(
         child: new Icon(Icons.add),
-        onPressed: ()=>Navigator.of(context).push(
-          new MaterialPageRoute(
-            builder: (BuildContext context)=> new AddData(),
-          )
-        ),
+        onPressed: navigateSecondPage,
       ),
       body: new FutureBuilder<List>(
         future: getData(),
@@ -54,9 +51,24 @@ class _HomeState extends State<Home> {
       ),
     );
   }
+
+  void refreshData() {
+    ids++;
+  }
+
+  onGoBack(dynamic value) {
+    refreshData();
+    setState(() {});
+  }
+
+  void navigateSecondPage() {
+    Route route = MaterialPageRoute(builder: (context) => AddData());
+    Navigator.push(context, route).then(onGoBack);
+  }
 }
 
 class ItemList extends StatelessWidget {
+  int idss = 0;
   final List list;
   ItemList({this.list});
 

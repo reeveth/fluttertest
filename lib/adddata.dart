@@ -66,11 +66,7 @@ void addData(){
                   color: Colors.blueAccent,
                   onPressed: () {
                     addData();
-                    Navigator.of(context).push(
-                        new MaterialPageRoute(
-                          builder: (BuildContext context)=> new Home(),
-                        )
-                    );
+                    Navigator.pop(context);
                   },
                 )
               ],

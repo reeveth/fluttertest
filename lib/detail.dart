@@ -39,11 +39,8 @@ class _DetailState extends State<Detail> {
               child: Text("OK DELETE!",style: new TextStyle(color: Colors.black),),
               onPressed: (){
                 deleteData();
-                Navigator.of(context).push(
-                    new MaterialPageRoute(
-                      builder: (BuildContext context)=> new Home(),
-                    )
-                );
+                Navigator.pop(context);
+                Navigator.pop(context);
               },
             ),
             TextButton(
