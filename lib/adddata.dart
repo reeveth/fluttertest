@@ -41,22 +41,22 @@ void addData(){
                 new TextField(
                   controller: controllerCode,
                   decoration: new InputDecoration(
-                      hintText: "Item Code", labelText: "Item Code"),
+                      hintText: "Id Kategori", labelText: "Id Kategori"),
                 ),
                 new TextField(
                   controller: controllerName,
                   decoration: new InputDecoration(
-                      hintText: "Item Name", labelText: "Item Name"),
+                      hintText: "Account Name", labelText: "Account Name"),
                 ),
                 new TextField(
                   controller: controllerPrice,
                   decoration: new InputDecoration(
-                      hintText: "Price", labelText: "Price"),
+                      hintText: "Username", labelText: "Username"),
                 ),
                 new TextField(
                   controller: controllerStock,
                   decoration: new InputDecoration(
-                      hintText: "Stock", labelText: "Stock"),
+                      hintText: "Password", labelText: "Password"),
                 ),
                 new Padding(
                   padding: const EdgeInsets.all(10.0),
